@@ -15,7 +15,7 @@ News
 ======
 * **Nov 2025** [One Paper](https://www.sciencedirect.com/science/article/pii/S136184152500413X) has been published to Medical Image Analysis (**IF 11.8**)
 * **Jul 2025** [One Chapter](https://link.springer.com/chapter/10.1007/978-3-031-89963-8_6) has been published on Magzine Trustworthy AI in Cancer Imaging Research
-* **Jul 2025** [One Paper](https://www.sciencedirect.com/science/article/pii/S1361841525001513) has been published on Medical Image Analysis (**IF 11.8**)
+* **Jul 2025** [One Paper](https://doi.org/10.1016/j.media.2025.103604) has been published on Medical Image Analysis (**IF 11.8**)
 * **Jun 2025** [One Paper](https://publications.ersnet.org/content/erj/66/4/2500981.abstract) has been published on European Respiratory Journal (**IF 21**)
 * **Apr 2025** [One Paper](https://ieeexplore.ieee.org/abstract/document/10976244) has been published on IEEE TNNLS (**IF 8.9**)
 * **Mar 2025** [One Paper](https://www.sciencedirect.com/science/article/pii/S1361841525001008) has been published on Medical Image Analysis (**IF 11.8**)
