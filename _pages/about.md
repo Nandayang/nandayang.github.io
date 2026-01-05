@@ -17,6 +17,7 @@ News
 * Jul 2025 [One Chapter](https://doi.org/10.1007/978-3-031-89963-8_6) has been published by Springer Nature.
 * Jul 2025 [One Paper](https://doi.org/10.1016/j.media.2025.103604) has been published on Medical Image Analysis (**IF 11.8**)
 * Jun 2025 [One Paper](https://doi.org/10.1183/13993003.00981-2025 ) has been published on European Respiratory Journal (**IF 21**)
+* May 2025 [One Paper](https://openreview.net/forum?id=kbQ2DpD3Vb) has been accepted to UAI 2025
 * Apr 2025 [One Paper](https://doi.org/10.1109/TNNLS.2025.3558857) has been published on IEEE TNNLS (**IF 8.9**)
 * Mar 2025 [One Paper](https://doi.org/10.1016/j.media.2025.103553) has been published on Medical Image Analysis (**IF 11.8**)
 * Feb 2025 [One Paper](https://doi.org/10.1038/s42256-025-00984-1) has been published on Nature Machine Intelligence (**IF 31.8**)
