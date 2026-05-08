@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name — Principal Investigator</title>
+    <meta name="description" content="Personal homepage of [Your Name], Principal Investigator at [Your Institution].">
+    
+    <!-- Fonts: Fraunces (display serif) + Inter Tight (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #fafaf7;
+            --bg-card: #ffffff;
+            --ink: #1a1f2e;
+            --ink-soft: #4a5267;
+            --ink-muted: #8b92a5;
+            --rule: #e6e4dc;
+            --accent: #2d4a7c;
+            --accent-soft: #e8eef8;
+            --highlight: #c8923a;
+            --code-bg: #f4f1ea;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter Tight', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.65;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ===== Header ===== */
+        header {
+            padding: 80px 0 56px;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .header-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .portrait {
+            width: 200px;
+            height: 240px;
+            background: linear-gradient(135deg, var(--accent-soft) 0%, #d4dff0 100%);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 12px 32px -16px rgba(45, 74, 124, 0.25);
+        }
+
+        .portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portrait-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fraunces', serif;
+            font-size: 64px;
+            color: var(--accent);
+            opacity: 0.4;
+            font-style: italic;
+        }
+
+        .name {
+            font-family: 'Fraunces', serif;
+            font-size: 52px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin-bottom: 12px;
+            color: var(--ink);
+        }
+
+        .name .first {
+            color: var(--accent);
+        }
+
+        .title {
+            font-size: 17px;
+            color: var(--ink-soft);
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .affiliation {
+            font-size: 17px;
+            color: var(--ink-soft);
+            margin-bottom: 24px;
+        }
+
+        .affiliation a {
+            color: var(--ink-soft);
+            text-decoration: underline;
+            text-decoration-color: var(--rule);
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.2s;
+        }
+
+        .affiliation a:hover {
+            text-decoration-color: var(--accent);
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+        }
+
+        .contact-row a {
+            color: var(--ink-soft);
+            text-decoration: none;
+            padding: 5px 10px;
+            background: var(--bg-card);
+            border: 1px solid var(--rule);
+            border-radius: 3px;
+            transition: all 0.18s ease;
+        }
+
+        .contact-row a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .contact-row .sep {
+            color: var(--ink-muted);
+            padding: 5px 0;
+        }
+
+        /* ===== Section ===== */
+        section {
+            padding: 56px 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .section-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--highlight);
+            letter-spacing: 0.05em;
+            font-weight: 500;
+        }
+
+        h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+        }
+
+        /* ===== About ===== */
+        .about-text {
+            font-size: 17px;
+            line-height: 1.75;
+            color: var(--ink-soft);
+            max-width: 720px;
+        }
+
+        .about-text p + p {
+            margin-top: 16px;
+        }
+
+        .about-text strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .about-text em {
+            color: var(--accent);
+            font-style: italic;
+            font-family: 'Fraunces', serif;
+        }
+
+        /* ===== Research Interests ===== */
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .interest-card {
+            padding: 20px 22px;
+            background: var(--bg-card);
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .interest-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px -12px rgba(45, 74, 124, 0.2);
+        }
+
+        .interest-card h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: var(--ink);
+        }
+
+        .interest-card p {
+            font-size: 14px;
+            color: var(--ink-soft);
+            line-height: 1.55;
+        }
+
+        /* ===== News ===== */
+        .news-list {
+            list-style: none;
+            max-width: 780px;
+        }
+
+        .news-item {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            gap: 24px;
+            padding: 14px 0;
+            border-bottom: 1px dashed var(--rule);
+            align-items: baseline;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--ink-muted);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        .news-content {
+            font-size: 15px;
+            color: var(--ink-soft);
+            line-height: 1.6;
+        }
+
+        .news-content a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .news-content a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        .news-tag {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 2px 7px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            border-radius: 2px;
+            margin-right: 8px;
+            font-weight: 500;
+        }
+
+        .news-tag.hiring {
+            background: #fbf0db;
+            color: #8a5a18;
+        }
+
+        /* ===== Publications ===== */
+        .pub-year {
+            font-family: 'Fraunces', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--accent);
+            margin-top: 32px;
+            margin-bottom: 16px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--accent-soft);
+        }
+
+        .pub-year:first-of-type {
+            margin-top: 0;
+        }
+
+        .pub-list {
+            list-style: none;
+        }
+
+        .pub-item {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 20px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .pub-item:last-child {
+            border-bottom: none;
+        }
+
+        .pub-thumb {
+            width: 80px;
+            height: 60px;
+            background: linear-gradient(135deg, #f0ede4, #e6e2d4);
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: var(--ink-muted);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .pub-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .pub-authors {
+            font-size: 14px;
+            color: var(--ink-soft);
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        .pub-authors .me {
+            color: var(--ink);
+            font-weight: 600;
+            border-bottom: 1px solid var(--highlight);
+        }
+
+        .pub-venue {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .pub-venue .badge {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-style: normal;
+            font-size: 10px;
+            background: var(--highlight);
+            color: white;
+            padding: 1px 6px;
+            border-radius: 2px;
+            margin-left: 6px;
+            letter-spacing: 0.05em;
+            vertical-align: middle;
+            font-weight: 500;
+        }
+
+        .pub-links {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .pub-links a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--ink-soft);
+            text-decoration: none;
+            padding: 3px 9px;
+            border: 1px solid var(--rule);
+            border-radius: 3px;
+            transition: all 0.18s;
+        }
+
+        .pub-links a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background: var(--accent-soft);
+        }
+
+        /* ===== Group / Students ===== */
+        .group-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 24px;
+        }
+
+        .person-card {
+            text-align: center;
+        }
+
+        .person-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-soft), #d4dff0);
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fraunces', serif;
+            font-size: 32px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .person-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 2px;
+        }
+
+        .person-role {
+            font-size: 12px;
+            color: var(--ink-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* ===== Teaching ===== */
+        .teaching-list {
+            list-style: none;
+        }
+
+        .teaching-item {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            gap: 24px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .teaching-item:last-child {
+            border-bottom: none;
+        }
+
+        .teaching-code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .teaching-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 2px;
+        }
+
+        .teaching-meta {
+            font-size: 13px;
+            color: var(--ink-muted);
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            padding: 40px 0 60px;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--ink-muted);
+            letter-spacing: 0.04em;
+        }
+
+        footer a {
+            color: var(--ink-muted);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--ink-muted);
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 720px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            header {
+                padding: 48px 0 40px;
+            }
+
+            .header-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .portrait {
+                width: 160px;
+                height: 192px;
+            }
+
+            .name {
+                font-size: 38px;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .news-item, .teaching-item {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            .pub-item {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .pub-thumb {
+                width: 100%;
+                height: 50px;
+            }
+        }
+
+        /* Subtle entrance animation */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header, section {
+            animation: fadeUp 0.6s ease-out backwards;
+        }
+
+        section:nth-of-type(1) { animation-delay: 0.05s; }
+        section:nth-of-type(2) { animation-delay: 0.1s; }
+        section:nth-of-type(3) { animation-delay: 0.15s; }
+        section:nth-of-type(4) { animation-delay: 0.2s; }
+        section:nth-of-type(5) { animation-delay: 0.25s; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ===================== HEADER ===================== -->
+    <header>
+        <div class="header-grid">
+            <div class="portrait">
+                <!-- Replace this with: <img src="photo.jpg" alt="Your Name"> -->
+                <div class="portrait-placeholder">YN</div>
+            </div>
+            <div>
+                <h1 class="name"><span class="first">Your</span> Name</h1>
+                <div class="title">Assistant Professor · Principal Investigator</div>
+                <div class="affiliation">Department of Computer Science, <a href="#">Your University</a></div>
+                <div class="contact-row">
+                    <a href="mailto:you@university.edu">✉ you@university.edu</a>
+                    <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+                    <a href="https://github.com/yourhandle" target="_blank">GitHub</a>
+                    <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+                    <a href="cv.pdf" target="_blank">CV [PDF]</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about">
+        <div class="section-header">
+            <span class="section-num">01 / About</span>
+        </div>
+        <div class="about-text">
+            <p>
+                I am an Assistant Professor at <strong>Your University</strong>, where I lead the
+                <em>[Lab Name]</em>. My research lies at the intersection of <strong>machine learning</strong>,
+                <strong>computer vision</strong>, and <strong>scientific computing</strong>, with a focus on
+                building models that are both efficient and trustworthy.
+            </p>
+            <p>
+                Before joining Your University, I was a postdoctoral researcher at <strong>X Lab</strong>,
+                and received my Ph.D. from <strong>Y University</strong> under the supervision of
+                <strong>Prof. Z</strong>. I have also spent time at <strong>Company A</strong> as a research intern.
+            </p>
+            <p>
+                <strong>I am actively recruiting</strong> Ph.D. students, M.S. students, and visiting scholars.
+                If you are interested in joining the group, please see the
+                <a href="#" style="color: var(--accent);">prospective students page</a>.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================== RESEARCH INTERESTS ===================== -->
+    <section id="research">
+        <div class="section-header">
+            <span class="section-num">02 / Research</span>
+        </div>
+        <div class="interests-grid">
+            <div class="interest-card">
+                <h3>Foundation Models</h3>
+                <p>Efficient training and adaptation of large-scale models for scientific domains.</p>
+            </div>
+            <div class="interest-card">
+                <h3>Trustworthy ML</h3>
+                <p>Robustness, interpretability, and uncertainty quantification in deep networks.</p>
+            </div>
+            <div class="interest-card">
+                <h3>Multimodal Learning</h3>
+                <p>Joint reasoning over vision, language, and structured scientific data.</p>
+            </div>
+            <div class="interest-card">
+                <h3>AI for Science</h3>
+                <p>Applications to drug discovery, materials, and the physical sciences.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== NEWS ===================== -->
+    <section id="news">
+        <div class="section-header">
+            <span class="section-num">03 / News</span>
+            <h2>Recent Updates</h2>
+        </div>
+        <ul class="news-list">
+            <li class="news-item">
+                <div class="news-date">2026 · 04</div>
+                <div class="news-content">
+                    <span class="news-tag hiring">Hiring</span>
+                    Recruiting Ph.D. students for Fall 2026. Interested applicants please email me with your CV and a brief research statement.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">2026 · 03</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    Our paper "<a href="#">Sample Paper Title on Efficient Foundation Models</a>" is accepted to <em>ICML 2026</em>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">2026 · 02</div>
+                <div class="news-content">
+                    <span class="news-tag">Talk</span>
+                    Gave an invited talk at <a href="#">Stanford AI Seminar</a> on robustness in vision-language models.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">2026 · 01</div>
+                <div class="news-content">
+                    <span class="news-tag">Award</span>
+                    Honored to receive the NSF CAREER Award.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">2025 · 09</div>
+                <div class="news-content">
+                    Joined Your University as an Assistant Professor. Starting the [Lab Name]!
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- ===================== PUBLICATIONS ===================== -->
+    <section id="publications">
+        <div class="section-header">
+            <span class="section-num">04 / Publications</span>
+            <h2>Selected Papers</h2>
+        </div>
+
+        <div class="pub-year">2026</div>
+        <ul class="pub-list">
+            <li class="pub-item">
+                <div class="pub-thumb">FIG</div>
+                <div>
+                    <div class="pub-title">Sample Paper Title on Efficient Foundation Models</div>
+                    <div class="pub-authors"><span class="me">Your Name</span>, Coauthor A, Coauthor B, Senior Author</div>
+                    <div class="pub-venue">International Conference on Machine Learning (ICML)<span class="badge">Oral</span></div>
+                    <div class="pub-links">
+                        <a href="#">Paper</a>
+                        <a href="#">Code</a>
+                        <a href="#">Slides</a>
+                        <a href="#">BibTeX</a>
+                    </div>
+                </div>
+            </li>
+            <li class="pub-item">
+                <div class="pub-thumb">FIG</div>
+                <div>
+                    <div class="pub-title">Another Paper Title on Multimodal Reasoning</div>
+                    <div class="pub-authors">Coauthor A, <span class="me">Your Name</span>, Coauthor C</div>
+                    <div class="pub-venue">Conference on Computer Vision and Pattern Recognition (CVPR)</div>
+                    <div class="pub-links">
+                        <a href="#">Paper</a>
+                        <a href="#">Code</a>
+                        <a href="#">Project</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="pub-year">2025</div>
+        <ul class="pub-list">
+            <li class="pub-item">
+                <div class="pub-thumb">FIG</div>
+                <div>
+                    <div class="pub-title">A Foundational Paper from Your Ph.D. Work</div>
+                    <div class="pub-authors"><span class="me">Your Name</span>, Advisor</div>
+                    <div class="pub-venue">Neural Information Processing Systems (NeurIPS)<span class="badge">Spotlight</span></div>
+                    <div class="pub-links">
+                        <a href="#">Paper</a>
+                        <a href="#">Code</a>
+                        <a href="#">Video</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- ===================== GROUP ===================== -->
+    <section id="group">
+        <div class="section-header">
+            <span class="section-num">05 / Group</span>
+            <h2>Lab Members</h2>
+        </div>
+        <div class="group-grid">
+            <div class="person-card">
+                <div class="person-avatar">A</div>
+                <div class="person-name">Student A</div>
+                <div class="person-role">Ph.D., 2025–</div>
+            </div>
+            <div class="person-card">
+                <div class="person-avatar">B</div>
+                <div class="person-name">Student B</div>
+                <div class="person-role">M.S., 2025–</div>
+            </div>
+            <div class="person-card">
+                <div class="person-avatar">C</div>
+                <div class="person-name">Student C</div>
+                <div class="person-role">Undergrad RA</div>
+            </div>
+            <div class="person-card">
+                <div class="person-avatar">+</div>
+                <div class="person-name" style="color: var(--ink-muted);">Open Position</div>
+                <div class="person-role">Ph.D. 2026</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== TEACHING ===================== -->
+    <section id="teaching">
+        <div class="section-header">
+            <span class="section-num">06 / Teaching</span>
+            <h2>Courses</h2>
+        </div>
+        <ul class="teaching-list">
+            <li class="teaching-item">
+                <div class="teaching-code">CS XXX</div>
+                <div>
+                    <div class="teaching-title">Deep Learning Systems</div>
+                    <div class="teaching-meta">Graduate course · Fall 2025, Fall 2026</div>
+                </div>
+            </li>
+            <li class="teaching-item">
+                <div class="teaching-code">CS YYY</div>
+                <div>
+                    <div class="teaching-title">Introduction to Machine Learning</div>
+                    <div class="teaching-meta">Undergraduate course · Spring 2026</div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+        © 2026 Your Name · Last updated May 2026 · Built with care, hosted on
+        <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+    </footer>
+
+</div>
+
+</body>
+</html>
