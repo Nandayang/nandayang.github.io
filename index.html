@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr Yang Nan — Principal Investigator</title>
-    <meta name="description" content="Personal homepage of [Your Name], Principal Investigator at [Your Institution].">
+    <meta name="description" content="Personal homepage of Dr Yang Nan, Professor at Nanjing University of Aeronautics and Astronautics.">
     
     <!-- Fonts: Fraunces (display serif) + Inter Tight (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -164,7 +164,7 @@
 
         /* ===== Section ===== */
         section {
-            padding: 56px 0;
+            padding: 30px 0;
             border-bottom: 1px solid var(--rule);
         }
 
@@ -176,7 +176,7 @@
             display: flex;
             align-items: baseline;
             gap: 16px;
-            margin-bottom: 28px;
+            margin-bottom: 16px;
         }
 
         .section-num {
@@ -196,11 +196,17 @@
         }
 
         /* ===== About ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 48px;
+            align-items: center;
+        }
+
         .about-text {
             font-size: 17px;
             line-height: 1.75;
             color: var(--ink-soft);
-            max-width: 720px;
         }
 
         .about-text p + p {
@@ -216,6 +222,127 @@
             color: var(--accent);
             font-style: italic;
             font-family: 'Fraunces', serif;
+        }
+
+        /* ===== Recruitment Card ===== */
+        .recruit-card {
+            background: linear-gradient(165deg, #fbf3e3 0%, #f8ead0 100%);
+            border: 1px solid #e8c98a;
+            border-radius: 6px;
+            padding: 24px 22px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 18px 40px -24px rgba(168, 122, 50, 0.35);
+        }
+
+        /* Decorative corner accent */
+        .recruit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle at top right, rgba(200, 146, 58, 0.12), transparent 70%);
+            pointer-events: none;
+        }
+
+        .recruit-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #6b4814;
+            font-weight: 500;
+            margin-bottom: 14px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #d97706;
+            box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.6);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%   { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.55); }
+            70%  { box-shadow: 0 0 0 8px rgba(217, 119, 6, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); }
+        }
+
+        .recruit-title {
+            font-family: 'Fraunces', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: #4a3309;
+            letter-spacing: -0.01em;
+            margin-bottom: 8px;
+            line-height: 1.15;
+        }
+
+        .recruit-intro {
+            font-size: 13px;
+            line-height: 1.55;
+            color: #6b4814;
+            margin-bottom: 16px;
+        }
+
+        .recruit-list {
+            list-style: none;
+            margin-bottom: 18px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(168, 122, 50, 0.25);
+        }
+
+        .recruit-list li {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 10px;
+            padding: 6px 0;
+            font-size: 12.5px;
+            align-items: baseline;
+        }
+
+        .recruit-role {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            color: #8a5a18;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .recruit-detail {
+            color: #4a3309;
+            line-height: 1.45;
+        }
+
+        .recruit-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 10px 16px;
+            background: #8a5a18;
+            color: #fbf3e3;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            font-family: 'Inter Tight', sans-serif;
+            border-radius: 4px;
+            letter-spacing: 0.01em;
+            transition: all 0.2s ease;
+        }
+
+        .recruit-cta:hover {
+            background: #4a3309;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px -6px rgba(74, 51, 9, 0.5);
         }
 
         /* ===== Research Interests ===== */
@@ -286,6 +413,13 @@
             line-height: 1.6;
         }
 
+        .news-content em {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
         .news-content a {
             color: var(--accent);
             text-decoration: none;
@@ -314,6 +448,169 @@
         .news-tag.hiring {
             background: #fbf0db;
             color: #8a5a18;
+        }
+
+        .news-tag.challenge {
+            background: #e8f3ec;
+            color: #2d6a4a;
+        }
+
+        /* Impact Factor badge */
+        .if-badge {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            padding: 1px 6px;
+            margin-left: 4px;
+            background: var(--code-bg);
+            color: var(--ink-soft);
+            border-radius: 2px;
+            border: 1px solid var(--rule);
+            vertical-align: 1px;
+        }
+
+        .if-badge.if-top {
+            background: linear-gradient(135deg, #fbf0db, #f6e4c0);
+            color: #8a5a18;
+            border-color: #e8c98a;
+            font-weight: 600;
+        }
+
+        /* Collapsible news list */
+        .news-list .news-item.news-hidden {
+            display: none;
+        }
+
+        .news-list.expanded .news-item.news-hidden {
+            display: grid;
+            animation: fadeUp 0.4s ease-out backwards;
+        }
+
+        /* Stagger the reveal animation for a graceful unfold */
+        .news-list.expanded .news-item.news-hidden:nth-child(7) { animation-delay: 0.00s; }
+        .news-list.expanded .news-item.news-hidden:nth-child(8) { animation-delay: 0.04s; }
+        .news-list.expanded .news-item.news-hidden:nth-child(9) { animation-delay: 0.08s; }
+        .news-list.expanded .news-item.news-hidden:nth-child(10) { animation-delay: 0.12s; }
+        .news-list.expanded .news-item.news-hidden:nth-child(11) { animation-delay: 0.16s; }
+        .news-list.expanded .news-item.news-hidden:nth-child(12) { animation-delay: 0.20s; }
+        .news-list.expanded .news-item.news-hidden:nth-child(n+13) { animation-delay: 0.24s; }
+
+        /* Collapsible publications list — same pattern as news */
+        .pub-list .pub-item.pub-hidden {
+            display: none;
+        }
+
+        .pub-list.expanded .pub-item.pub-hidden {
+            display: grid;
+            animation: fadeUp 0.4s ease-out backwards;
+        }
+
+        .pub-list.expanded .pub-item.pub-hidden:nth-child(5) { animation-delay: 0.00s; }
+        .pub-list.expanded .pub-item.pub-hidden:nth-child(6) { animation-delay: 0.05s; }
+        .pub-list.expanded .pub-item.pub-hidden:nth-child(7) { animation-delay: 0.10s; }
+        .pub-list.expanded .pub-item.pub-hidden:nth-child(8) { animation-delay: 0.15s; }
+        .pub-list.expanded .pub-item.pub-hidden:nth-child(n+9) { animation-delay: 0.20s; }
+
+        /* ===== "View all" — refined editorial style ===== */
+        .view-all-wrap {
+            margin-top: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Decorative thin lines flanking the button — gives it editorial weight */
+        .view-all-wrap::before,
+        .view-all-wrap::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--rule), transparent);
+            max-width: 200px;
+        }
+
+        .view-all-btn {
+            font-family: 'Fraunces', serif;
+            font-size: 14px;
+            font-style: italic;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            color: var(--accent);
+            background: var(--bg);
+            border: none;
+            padding: 10px 24px;
+            cursor: pointer;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: color 0.2s ease;
+            margin: 0 12px;
+        }
+
+        .view-all-btn:hover {
+            color: var(--ink);
+        }
+
+        .view-all-btn .btn-text {
+            position: relative;
+        }
+
+        /* Underline animation on hover */
+        .view-all-btn .btn-text::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 1px;
+            background: currentColor;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .view-all-btn:hover .btn-text::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* Custom-drawn arrow icon, more refined than ▼ */
+        .view-all-btn .arrow-icon {
+            width: 14px;
+            height: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--highlight);
+        }
+
+        .news-list.expanded ~ .view-all-wrap .view-all-btn .arrow-icon,
+        .pub-list.expanded ~ .view-all-wrap .view-all-btn .arrow-icon {
+            transform: rotate(180deg);
+        }
+
+        .view-all-btn .arrow-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Small count indicator beneath the button */
+        .view-all-meta {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: var(--ink-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            white-space: nowrap;
         }
 
         /* ===== Publications ===== */
@@ -567,6 +864,16 @@
                 width: 100%;
                 height: 50px;
             }
+
+            .view-all-wrap::before,
+            .view-all-wrap::after {
+                max-width: 60px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
         }
 
         /* Subtle entrance animation */
@@ -600,8 +907,8 @@
     <header>
         <div class="header-grid">
             <div class="portrait">
-                <!-- Replace this with: <img src="photo.jpg" alt="Your Name"> -->
-                <div class="photo.jpg">YN</div>
+                <!-- Replace src with your actual photo path -->
+                <img src="photo.jpg" alt="Yang Nan" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;portrait-placeholder&quot;>YN</div>';">
             </div>
             <div>
                 <h1 class="name"><span class="first">Dr</span> Yang Nan</h1>
@@ -621,22 +928,45 @@
         <div class="section-header">
             <span class="section-num">01 / About</span>
         </div>
-        <div class="about-text">
-            <p>
-                I am an Professor at <strong>Nanjing University of Aeronautics and Astronautics (NUAA)</strong>, where I lead the
-                <em>[Lab Name]</em>. My research lies at the intersection of <strong>machine learning</strong>,
-                <strong>computer vision</strong>, and <strong>biomedical research</strong>, with a focus on
-                building models that are both efficient and trustworthy.
-            </p>
-            <p>
-                Before joining NUAA, I was a research associate at <strong>Imperial College London</strong>,
-                where I received my Ph.D. under the supervision of <strong>Prof. <a href="https://scholar.google.com/citations?user=ZfzEFpsAAAAJ&hl=en" style="color: var(--accent);">Guang Yang</a></strong>.
-            </p>
-            <p>
-                <strong>I am actively recruiting</strong> Ph.D. students, M.S. students, and visiting scholars.
-                If you are interested in joining the group, please email me with your CV
-                <a href="#" style="color: var(--accent);">prospective students page</a>.
-            </p>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>
+                    I am a Professor at <strong>Nanjing University of Aeronautics and Astronautics (NUAA)</strong>,
+                    where I lead the <em>[Lab Name]</em>. My research lies at the intersection of machine learning,
+                    computer vision, and biomedical research, with a focus on building models that are both efficient and trustworthy.
+                </p>
+                <p>
+                    Before joining NUAA, I was a research associate at <strong>Imperial College London</strong>,
+                    where I received my Ph.D. under the supervision of
+                    <strong>Prof. <a href="https://scholar.google.com/citations?user=ZfzEFpsAAAAJ&hl=en" style="color: var(--accent);">Guang Yang</a></strong>.
+                    During my time at Imperial, I was fortunate to work alongside collaborators across the world, 
+                    an experience that continues to shape how I approach interdisciplinary
+                    medical AI research today.
+                </p>
+                <p>
+                    <strong>I am actively recruiting</strong> Ph.D. students, M.S. students, and visiting
+                    scholars passionate about AI4Science. A strong foundation in deep learning, solid
+                    programming skills (PyTorch preferred), and intellectual curiosity matter far more to
+                    me than a polished CV.
+                </p>
+            </div>
+
+            <aside class="recruit-card">
+                <div class="recruit-status">
+                    <span class="status-dot"></span>
+                    <span class="status-label">Recruiting Now</span>
+                </div>
+                <h3 class="recruit-title">Join the Lab</h3>
+                <p class="recruit-intro">Open positions for the 2026 cohort. Strong background in ML / CV / medical imaging preferred.</p>
+                <ul class="recruit-list">
+                    <li><span class="recruit-role">Ph.D.</span><span class="recruit-detail">Fully funded, multiple slots</span></li>
+                    <li><span class="recruit-role">M.S.</span><span class="recruit-detail">Open to applicants</span></li>
+                    <li><span class="recruit-role">Visiting</span><span class="recruit-detail">Scholars &amp; research interns</span></li>
+                </ul>
+                <a href="mailto:you@university.edu" class="recruit-cta">
+                    Email with CV →
+                </a>
+            </aside>
         </div>
     </section>
 
@@ -647,20 +977,16 @@
         </div>
         <div class="interests-grid">
             <div class="interest-card">
-                <h3>Foundation Models</h3>
-                <p>Efficient training and adaptation of large-scale models for scientific domains.</p>
+                <h3>Diagnosis and Prognosis</h3>
+                <p>Predicting disease outcome and progression via imaging-derived biomarkers.</p>
             </div>
             <div class="interest-card">
-                <h3>Trustworthy ML</h3>
-                <p>Robustness, interpretability, and uncertainty quantification in deep networks.</p>
+                <h3>Medical Foundation Models</h3>
+                <p>Efficient training and adaptation of large-scale models for medical vision &amp; language domains.</p>
             </div>
             <div class="interest-card">
                 <h3>Multimodal Learning</h3>
-                <p>Joint reasoning over vision, language, and structured scientific data.</p>
-            </div>
-            <div class="interest-card">
-                <h3>AI for Science</h3>
-                <p>Applications to drug discovery, materials, and the physical sciences.</p>
+                <p>Joint reasoning over vision, language, and structured clinical data.</p>
             </div>
         </div>
     </section>
@@ -671,42 +997,187 @@
             <span class="section-num">03 / News</span>
             <h2>Recent Updates</h2>
         </div>
-        <ul class="news-list">
+        <ul class="news-list" id="newsList">
             <li class="news-item">
-                <div class="news-date">2026 · 04</div>
-                <div class="news-content">
-                    <span class="news-tag hiring">Hiring</span>
-                    Recruiting Ph.D. students for Fall 2026. Interested applicants please email me with your CV and a brief research statement.
-                </div>
-            </li>
-            <li class="news-item">
-                <div class="news-date">2026 · 03</div>
+                <div class="news-date">Nov 2025</div>
                 <div class="news-content">
                     <span class="news-tag">Paper</span>
-                    Our paper "<a href="#">Sample Paper Title on Efficient Foundation Models</a>" is accepted to <em>ICML 2026</em>.
+                    <a href="https://doi.org/10.1016/j.media.2025.103867" target="_blank">One paper</a> has been published in <em>Medical Image Analysis</em> <span class="if-badge">IF 11.8</span>.
                 </div>
             </li>
             <li class="news-item">
-                <div class="news-date">2026 · 02</div>
+                <div class="news-date">Jul 2025</div>
                 <div class="news-content">
-                    <span class="news-tag">Talk</span>
-                    Gave an invited talk at <a href="#">Stanford AI Seminar</a> on robustness in vision-language models.
+                    <span class="news-tag">Chapter</span>
+                    <a href="https://doi.org/10.1007/978-3-031-89963-8_6" target="_blank">One chapter</a> has been published by <em>Springer Nature</em>.
                 </div>
             </li>
             <li class="news-item">
-                <div class="news-date">2026 · 01</div>
+                <div class="news-date">Jul 2025</div>
                 <div class="news-content">
-                    <span class="news-tag">Award</span>
-                    Honored to receive the NSF CAREER Award.
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1016/j.media.2025.103604" target="_blank">One paper</a> has been published in <em>Medical Image Analysis</em> <span class="if-badge">IF 11.8</span>.
                 </div>
             </li>
             <li class="news-item">
-                <div class="news-date">2025 · 09</div>
+                <div class="news-date">Jun 2025</div>
                 <div class="news-content">
-                    Joined Your University as an Assistant Professor. Starting the [Lab Name]!
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1183/13993003.00981-2025" target="_blank">One paper</a> has been published in <em>European Respiratory Journal</em> <span class="if-badge if-top">IF 21</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">May 2025</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://openreview.net/forum?id=kbQ2DpD3Vb" target="_blank">One paper</a> has been accepted to <em>UAI 2025</em>  (CCF B).
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Apr 2025</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1109/TNNLS.2025.3558857" target="_blank">One paper</a> has been published in <em>IEEE TNNLS</em> <span class="if-badge">IF 8.9</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Mar 2025</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1016/j.media.2025.103553" target="_blank">One paper</a> has been published in <em>Medical Image Analysis</em> <span class="if-badge">IF 11.8</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Feb 2025</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1038/s42256-025-00984-1" target="_blank">One paper</a> has been published in <em>Nature Machine Intelligence</em> <span class="if-badge if-top">IF 31.8</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Jan 2025</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1016/j.media.2024.103334" target="_blank">One paper</a> has been published in <em>Medical Image Analysis</em> <span class="if-badge">IF 11.8</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Oct 2024</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1007/978-3-031-72114-4_29" target="_blank">One paper</a> has been accepted to <em>MICCAI 2024</em>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Oct 2024</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1016/j.media.2024.103253" target="_blank">One paper</a> has been published in <em>Medical Image Analysis</em> <span class="if-badge">IF 11.8</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Oct 2024</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1016/j.patcog.2024.110604" target="_blank">One paper</a> has been published in <em>Pattern Recognition</em> <span class="if-badge">IF 7.6</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Aug 2024</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1016/j.artmed.2024.102930" target="_blank">One paper</a> has been published in <em>Artificial Intelligence in Medicine</em> <span class="if-badge">IF 6.2</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Jul 2024</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1109/TFUZZ.2024.3433506" target="_blank">One paper</a> has been published in <em>IEEE TFS</em> <span class="if-badge">IF 11.9</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Feb 2024</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1109/JBHI.2024.3370502" target="_blank">One paper</a> has been published in <em>IEEE JBHI</em> <span class="if-badge">IF 7.0</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Oct 2023</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1007/978-3-031-43904-9_2" target="_blank">One paper</a> has been accepted to <em>MICCAI 2023</em>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Jun 2023</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1109/JBHI.2023.3290136" target="_blank">One paper</a> has been published in <em>IEEE JBHI</em> <span class="if-badge">IF 7.0</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">May 2023</div>
+                <div class="news-content">
+                    <span class="news-tag challenge">Challenge</span>
+                    We organized the MICCAI 2023 challenge <a href="https://codalab.lisn.upsaclay.fr/competitions/13238" target="_blank">AIIB23</a>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">May 2023</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1109/TNNLS.2023.3269223" target="_blank">One paper</a> has been published in <em>IEEE TNNLS</em> <span class="if-badge">IF 8.9</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">May 2023</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1016/j.compbiomed.2022.106241" target="_blank">One paper</a> has been published in <em>Computers in Biology and Medicine</em> <span class="if-badge">IF 6.3</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Jul 2022</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1109/TMI.2022.3195123" target="_blank">One paper</a> has been published in <em>IEEE TMI</em> <span class="if-badge">IF 10.6</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Jun 2022</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1016/j.inffus.2022.01.001" target="_blank">One paper</a> has been published in <em>Information Fusion</em> <span class="if-badge">IF 18.6</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Mar 2022</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1016/j.patcog.2022.108648" target="_blank">One paper</a> has been published in <em>Pattern Recognition</em> <span class="if-badge">IF 8.0</span>.
+                </div>
+            </li>
+            <li class="news-item">
+                <div class="news-date">Feb 2022</div>
+                <div class="news-content">
+                    <span class="news-tag">Paper</span>
+                    <a href="https://doi.org/10.1016/j.media.2021.102307" target="_blank">One paper</a> has been published in <em>Medical Image Analysis</em> <span class="if-badge">IF 10.9</span>.
                 </div>
             </li>
         </ul>
+        <div class="view-all-wrap">
+            <button class="view-all-btn" id="viewAllBtn" onclick="toggleNews()" aria-label="View all news">
+                <span class="btn-text">View all news</span>
+                <span class="arrow-icon" aria-hidden="true">
+                    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 5L7 9L11 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="view-all-meta" id="newsCount"></span>
+            </button>
+        </div>
     </section>
 
     <!-- ===================== PUBLICATIONS ===================== -->
@@ -716,53 +1187,119 @@
             <h2>Selected Papers</h2>
         </div>
 
-        <div class="pub-year">2026</div>
-        <ul class="pub-list">
+        <ul class="pub-list" id="pubList">
             <li class="pub-item">
-                <div class="pub-thumb">FIG</div>
+                <div class="pub-thumb">ERJ</div>
                 <div>
-                    <div class="pub-title">Sample Paper Title on Efficient Foundation Models</div>
-                    <div class="pub-authors"><span class="me">Your Name</span>, Coauthor A, Coauthor B, Senior Author</div>
-                    <div class="pub-venue">International Conference on Machine Learning (ICML)<span class="badge">Oral</span></div>
+                    <div class="pub-title">Prognostication in patients with idiopathic pulmonary fibrosis using quantitative airway analysis from HRCT: a retrospective study</div>
+                    <div class="pub-authors"><span class="me">Yang Nan</span>, Federico Felder, Simon Walsh, Guang Yang</div>
+                    <div class="pub-venue">European Respiratory Journal, 2025<span class="badge">IF 21</span></div>
                     <div class="pub-links">
-                        <a href="#">Paper</a>
-                        <a href="#">Code</a>
-                        <a href="#">Slides</a>
-                        <a href="#">BibTeX</a>
+                        <a href="https://doi.org/10.1183/13993003.00981-2025" target="_blank">Paper</a>
+                        <a href="https://github.com/Nandayang/IPF-prognosis" target="_blank">Code</a>
                     </div>
                 </div>
             </li>
             <li class="pub-item">
-                <div class="pub-thumb">FIG</div>
+                <div class="pub-thumb">MedIA</div>
                 <div>
-                    <div class="pub-title">Another Paper Title on Multimodal Reasoning</div>
-                    <div class="pub-authors">Coauthor A, <span class="me">Your Name</span>, Coauthor C</div>
-                    <div class="pub-venue">Conference on Computer Vision and Pattern Recognition (CVPR)</div>
+                    <div class="pub-title">Revisiting medical image retrieval via knowledge consolidation</div>
+                    <div class="pub-authors"><span class="me">Yang Nan</span>, Huichi Zhou, Xiaodan Xing, Giorgos Papanastasiou, Lei Zhu, Zhifan Gao, Alejandro F. Frangi, Guang Yang</div>
+                    <div class="pub-venue">Medical Image Analysis, 2025<span class="badge">IF 11.8</span></div>
                     <div class="pub-links">
-                        <a href="#">Paper</a>
-                        <a href="#">Code</a>
-                        <a href="#">Project</a>
+                        <a href="https://doi.org/10.1016/j.media.2025.103553" target="_blank">Paper</a>
+                    </div>
+                </div>
+            </li>
+            <li class="pub-item">
+                <div class="pub-thumb">TNNLS</div>
+                <div>
+                    <div class="pub-title">Beyond the Hype: A Dispassionate Look at Vision-Language Models in Medical Scenario</div>
+                    <div class="pub-authors"><span class="me">Yang Nan</span>, Huichi Zhou, Xiaodan Xing, Guang Yang</div>
+                    <div class="pub-venue">IEEE Transactions on Neural Networks and Learning Systems, 2025<span class="badge">IF 8.9</span></div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1109/TNNLS.2025.3558857" target="_blank">Paper</a>
+                    </div>
+                </div>
+            </li>
+            <li class="pub-item">
+                <div class="pub-thumb">MedIA</div>
+                <div>
+                    <div class="pub-title">Hunting imaging biomarkers in pulmonary fibrosis: Benchmarks of the AIIB23 challenge</div>
+                    <div class="pub-authors"><span class="me">Yang Nan</span>, Xiaodan Xing, Shiyi Wang, et al.</div>
+                    <div class="pub-venue">Medical Image Analysis, 2024<span class="badge">IF 11.8</span></div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1016/j.media.2024.103253" target="_blank">Paper</a>
+                    </div>
+                </div>
+            </li>
+            <li class="pub-item">
+                <div class="pub-thumb">TNNLS</div>
+                <div>
+                    <div class="pub-title">Fuzzy Attention Neural Network to Tackle Discontinuity in Airway Segmentation</div>
+                    <div class="pub-authors"><span class="me">Yang Nan</span>, Javier Del Ser, Zeyu Tang, Peng Tang, Xiaodan Xing, Yingying Fang, Francisco Herrera, Witold Pedrycz, Simon Walsh, Guang Yang</div>
+                    <div class="pub-venue">IEEE Transactions on Neural Networks and Learning Systems, 2024<span class="badge">IF 8.9</span></div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1109/TNNLS.2023.3269223" target="_blank">Paper</a>
+                    </div>
+                </div>
+            </li>
+            <li class="pub-item">
+                <div class="pub-thumb">Inf Fus</div>
+                <div>
+                    <div class="pub-title">Data harmonisation for information fusion in digital healthcare: A state-of-the-art systematic review, meta-analysis and future research directions</div>
+                    <div class="pub-authors"><span class="me">Yang Nan</span>, Javier Del Ser, Simon Walsh, et al.</div>
+                    <div class="pub-venue">Information Fusion, 2022<span class="badge">IF 15.5</span></div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1016/j.inffus.2022.01.001" target="_blank">Paper</a>
+                    </div>
+                </div>
+            </li>
+            <li class="pub-item">
+                <div class="pub-thumb">TMI</div>
+                <div>
+                    <div class="pub-title">Unsupervised Tissue Segmentation via Deep Constrained Gaussian Network</div>
+                    <div class="pub-authors"><span class="me">Yang Nan</span>, Peng Tang, Guyue Zhang, Caihong Zeng, Zhihong Liu, Zhifan Gao, Heye Zhang, Guang Yang</div>
+                    <div class="pub-venue">IEEE Transactions on Medical Imaging, 2022<span class="badge">IF 10.6</span></div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1109/TMI.2022.3195123" target="_blank">Paper</a>
+                    </div>
+                </div>
+            </li>
+            <li class="pub-item">
+                <div class="pub-thumb">PR</div>
+                <div>
+                    <div class="pub-title">Automatic fine-grained glomerular lesion recognition in kidney pathology</div>
+                    <div class="pub-authors"><span class="me">Yang Nan</span>, Fengyi Li, Peng Tang, et al.</div>
+                    <div class="pub-venue">Pattern Recognition, 2022<span class="badge">IF 7.6</span></div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1016/j.patcog.2022.108648" target="_blank">Paper</a>
+                    </div>
+                </div>
+            </li>
+            <li class="pub-item">
+                <div class="pub-thumb">Nat MI</div>
+                <div>
+                    <div class="pub-title">On the caveats of AI autophagy</div>
+                    <div class="pub-authors">Xiaodan Xing, Fadong Shi, Jiahao Huang, Yinzhe Wu, <span class="me">Yang Nan</span>, Sheng Zhang, Yingying Fang, Michael Roberts, Carola-Bibiane Schönlieb, Javier Del Ser, Guang Yang</div>
+                    <div class="pub-venue">Nature Machine Intelligence, 2025<span class="badge">IF 23.9</span></div>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1038/s42256-025-00984-1" target="_blank">Paper</a>
                     </div>
                 </div>
             </li>
         </ul>
-
-        <div class="pub-year">2025</div>
-        <ul class="pub-list">
-            <li class="pub-item">
-                <div class="pub-thumb">FIG</div>
-                <div>
-                    <div class="pub-title">A Foundational Paper from Your Ph.D. Work</div>
-                    <div class="pub-authors"><span class="me">Your Name</span>, Advisor</div>
-                    <div class="pub-venue">Neural Information Processing Systems (NeurIPS)<span class="badge">Spotlight</span></div>
-                    <div class="pub-links">
-                        <a href="#">Paper</a>
-                        <a href="#">Code</a>
-                        <a href="#">Video</a>
-                    </div>
-                </div>
-            </li>
-        </ul>
+        <div class="view-all-wrap">
+            <button class="view-all-btn" id="viewAllPubsBtn" onclick="togglePubs()" aria-label="View all publications">
+                <span class="btn-text">View all publications</span>
+                <span class="arrow-icon" aria-hidden="true">
+                    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 5L7 9L11 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="view-all-meta" id="pubsCount"></span>
+            </button>
+        </div>
     </section>
 
     <!-- ===================== GROUP ===================== -->
@@ -821,11 +1358,88 @@
 
     <!-- ===================== FOOTER ===================== -->
     <footer>
-        © 2026 Your Name · Last updated May 2026 · Built with care, hosted on
+        © 2026 Yang Nan · Last updated May 2026 · Built with care, hosted on
         <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
     </footer>
 
 </div>
+
+<script>
+    // Generic collapsible list helper — used by both News and Publications
+    function setupCollapsibleList(config) {
+        const list = document.getElementById(config.listId);
+        const btn = document.getElementById(config.btnId);
+        const countEl = document.getElementById(config.countId);
+        if (!list || !btn) return;
+
+        const items = list.querySelectorAll(config.itemSelector);
+        const total = items.length;
+        const visible = config.visibleCount;
+        const hidden = Math.max(0, total - visible);
+
+        // Hide items beyond the visible count
+        items.forEach((item, i) => {
+            if (i >= visible) item.classList.add(config.hiddenClass);
+        });
+
+        // If nothing to hide, remove the button entirely
+        if (hidden === 0) {
+            btn.parentElement.style.display = 'none';
+            return;
+        }
+
+        countEl.textContent = `${visible} / ${total}`;
+    }
+
+    // Generic toggler — flips expanded state and updates button text/count
+    function toggleCollapsibleList(config) {
+        const list = document.getElementById(config.listId);
+        const btn = document.getElementById(config.btnId);
+        const countEl = document.getElementById(config.countId);
+        const btnText = btn.querySelector('.btn-text');
+        const items = list.querySelectorAll(config.itemSelector);
+        const total = items.length;
+        const visible = config.visibleCount;
+
+        list.classList.toggle('expanded');
+        const expanded = list.classList.contains('expanded');
+
+        btnText.textContent = expanded ? 'Show less' : config.expandText;
+        countEl.textContent = expanded
+            ? `${total} / ${total}`
+            : `${visible} / ${total}`;
+    }
+
+    // ---- News config ----
+    const NEWS_CONFIG = {
+        listId: 'newsList',
+        btnId: 'viewAllBtn',
+        countId: 'newsCount',
+        itemSelector: '.news-item',
+        hiddenClass: 'news-hidden',
+        visibleCount: 6,
+        expandText: 'View all news'
+    };
+
+    // ---- Publications config ----
+    const PUBS_CONFIG = {
+        listId: 'pubList',
+        btnId: 'viewAllPubsBtn',
+        countId: 'pubsCount',
+        itemSelector: '.pub-item',
+        hiddenClass: 'pub-hidden',
+        visibleCount: 4,
+        expandText: 'View all publications'
+    };
+
+    // Initialize both lists on page load
+    setupCollapsibleList(NEWS_CONFIG);
+    setupCollapsibleList(PUBS_CONFIG);
+
+    // Handlers wired to onclick="..." in the HTML
+    function toggleNews() { toggleCollapsibleList(NEWS_CONFIG); }
+    function togglePubs() { toggleCollapsibleList(PUBS_CONFIG); }
+</script>
 
 </body>
 </html>
